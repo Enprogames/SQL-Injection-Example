@@ -13,7 +13,11 @@
 </head>
 
 <body>
-    <a href="/"><h1>sql_injection</h1></a>
+    <a href="{% url 'homepage' %}"><h1>sql_injection</h1></a>
+    <ul>
+        <li><p><a href="{% url 'login' %}">Login</a></p></li>
+        {% comment %} <li><p><a href="{% url '' %}">Register</a></p></li> {% endcomment %}
+    </ul>
     {% block navbar_global %}
     {% endblock %}
     <hr>

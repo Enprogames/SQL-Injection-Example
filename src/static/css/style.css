@@ -14,7 +14,7 @@
 body{
     background-image: radial-gradient(circle, #5383af 0%, #76def3 100%);
     text-align: center;
-    margin: 0px;
+    margin: 10px;
     height: 100%;
 
 
@@ -50,4 +50,10 @@ body{
     margin-right: auto;
     margin-top: 100px;
     width: 50%;
+}
+label, input {
+    display: block;
+}
+span.helptext {
+    display: none;
 }

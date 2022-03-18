@@ -19,6 +19,6 @@ from sql_injection import views
 
 urlpatterns = [
     path("", views.index, name="homepage"),
-    path("login/", include("users.urls")),
+    path("accounts/", include("users.urls")),
     path('admin/', admin.site.urls),
 ]
