@@ -1,0 +1,8 @@
+<!--users/templates/users/dashboard.html-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Login</h2>
+<p>Successfully logged in as {{ user.username|default:'Guest' }}</p>
+{% endblock %}

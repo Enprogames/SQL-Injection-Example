@@ -1,5 +1,6 @@
+
 .header{
-    background-color: #5383af;
+    background-color: DimGray;
     float: top;
     width:auto;
     height:150px;
@@ -11,13 +12,32 @@
     font-style: fjalla;
 
 }
+
+.navbar {
+    float: right;
+}
+
+.navbar ul, .navbar h1 {
+    overflow: auto;
+}
+
+.navbar li {
+    float: left;
+    list-style: none;
+    margin: 15px 20px;
+}
+
+.navbar li a {
+    padding: 3px 4px;
+    text-decoration: none;
+    color: white;
+}
+
 body{
-    background-image: radial-gradient(circle, #5383af 0%, #76def3 100%);
-    text-align: center;
+    background-image: radial-gradient(circle, #2b3743 0%, #2a4a50 100%);
     margin: 10px;
     height: 100%;
-
-
+    color: white;
 }
 .product{
     width:250px;
