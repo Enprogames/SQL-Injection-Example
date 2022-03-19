@@ -30,6 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# use my own terrible authentication method as defined in bad_authentication.py
+AUTHENTICATION_BACKENDS = ['sql_injection.bad_authentication.SettingsBackend']
 
 # Application definition
 
@@ -132,3 +134,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = 'homepage'
