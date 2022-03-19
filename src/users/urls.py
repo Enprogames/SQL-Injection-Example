@@ -6,4 +6,5 @@ from users import views
 urlpatterns = [
     # path("", views.login, name="login"),
     path("", include("django.contrib.auth.urls")),
+    path("dashboard/", views.dashboard, name="dashboard"),
 ]
