@@ -17,11 +17,15 @@ class SettingsBackend(BaseBackend):
     """
 
     def authenticate(self, request, username=None, password=None):
-        query = "SELECT * FROM auth_user WHERE username = '%s' and password='%s'" % (username, make_password(password))
-        print(f"{list(User.objects.raw(query))}")
-        login_valid = User.objects.filter(username=username).exists()
-        pwd_valid = check_password(password, User.objects.get(username=username).password)
-        if login_valid and pwd_valid:
+        login_valid = False
+        user_list = User.objects.raw("SELECT * FROM auth_user WHERE username = '%s'" % username)
+        if (len(user_list) > 0):
+            encoded_password = user_list[0].password
+            algorithm, iterations, salt, hash = encoded_password.split('$', 3)
+            query = "SELECT * FROM auth_user WHERE username = '%s' and password='%s'" % (username, make_password(password, salt=salt))
+            login_valid = len(User.objects.raw(query)) > 0
+
+        if login_valid:
             try:
                 user = User.objects.get(username=username)
             except User.DoesNotExist:
