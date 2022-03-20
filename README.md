@@ -9,12 +9,8 @@ This was created by Ethan Posner and Sebastien Van Den Bremt. A simple Django we
 4. Run setup.sh script: `./setup.sh`. If this is not desired, see alternative instructions below. This does the following:
     - Creates and activates a virtual environment with venv
     - Upgrades pip to latest version and installs all packages from requirements.txt
-    - Installs pre-commit hooks as specified in .pre-commit-config.yaml
     - Creates .env file for django secret key. You must copy your django secret key into this file.
-    - Creates post-merge hook which will do the following everytime a merge is done:
-        - Activate virtual environment
-        - Update pip and install any new packages from requirements.txt
-    - Create update.sh script which can be used to run post-merge hook manually.
+
 - Alternatively, to setup the project manually and avoid running the setup.sh script, run the following (if using windows, make sure to run windows instructions inside of git bash).
     1. Create python virtual environment using venv
         - On linux: `python3 -m venv venv --prompt SQL-Injection-Example`
@@ -26,9 +22,7 @@ This was created by Ethan Posner and Sebastien Van Den Bremt. A simple Django we
         - `python -m pip install --upgrade pip`
     4. Install all required packages from requirements.txt
         - `python -m pip install -r requirements.txt`
-    5. Setup pre-commit hooks (optional if not contributing to project). This stops you from committing files which are improperly formatted.
-        - `python -m pre_commit install`
-    6. Create a .env file for the django secret key
+    5. Create a .env file for the django secret key
         - ```
             cat > .env << EOF
             SECRET_KEY = 'Enter django secret key here'
@@ -42,11 +36,19 @@ This was created by Ethan Posner and Sebastien Van Den Bremt. A simple Django we
 2. Make sure you're in the root of the project directory
     - If you're outside of the sustainablinds directory, go into it with `cd SQL-Injection-Example`
     - If you're in the django-website directory, run `cd ..`
-3. To start the website, run `src/manage.py runserver`
-4. Click on the link in the terminal, or go to `http://127.0.0.1:8000/` in your browser.
+3. Make database migrations: `src/manage.py migrate`
+4. To start the website, run `src/manage.py runserver`
+5. Click on the link in the terminal, or go to `http://127.0.0.1:8000/` in your browser.
 
 At the time of writing, the following should be displayed in your browser if everything worked correctly
 ![website-homepage](Documentation/Images/website-homepage.jpg)
+
+This website has user management, meaning users can create accounts and login to the website with them. However,
+the website is purposely configured to be insecure so that SQL injections work. For example, if there is a user "ethan" registered on the website, entering the following into the username box will bypass security: `ethan' or 1 == '1`
+
+After this is done, the resulting page should be displayed:
+
+![injection_example](Documentation/Images/injection_example.jpg)
 
 ## License
 Copyright 2022 Ethan Posner and Sebastien Van Den Bremt.
