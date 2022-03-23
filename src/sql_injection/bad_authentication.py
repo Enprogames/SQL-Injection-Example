@@ -14,27 +14,20 @@ class SettingsBackend(BaseBackend):
 
     ADMIN_LOGIN = 'admin'
     ADMIN_PASSWORD = 'pbkdf2_sha256$30000$Vo0VlMnkR4Bk$qEvtdyZRWTcOsCnI/oQ7fVOu1XAURIZYoOZ3iq8Dr4M='
+    Each user has the following attributes:
+    ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined']
     """
 
     def authenticate(self, request, username=None, password=None):
         login_valid = False
         user_list = User.objects.raw("SELECT * FROM auth_user WHERE username = '%s'" % username)
         if (len(user_list) > 0):
-            encoded_password = user_list[0].password
-            algorithm, iterations, salt, hash = encoded_password.split('$', 3)
+            user = user_list[0]
+            algorithm, iterations, salt, hash = user.password.split('$', 3)
             query = "SELECT * FROM auth_user WHERE username = '%s' and password='%s'" % (username, make_password(password, salt=salt))
             login_valid = len(User.objects.raw(query)) > 0
 
         if login_valid:
-            try:
-                user = User.objects.get(username=username)
-            except User.DoesNotExist:
-                # Create a new user. There's no need to set a password
-                # because only the password from settings.py is checked.
-                user = User(username=username)
-                user.is_staff = True
-                user.is_superuser = True
-                user.save()
             return user
         return None
 
