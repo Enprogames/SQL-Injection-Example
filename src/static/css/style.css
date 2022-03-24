@@ -5,7 +5,7 @@ body{
     color: white;
 }
 
-.header{
+.header {
     background-color: DimGray;
     float: top;
     width:auto;
@@ -25,7 +25,6 @@ body{
 
 .title {
     margin: 10px;
-    /* float: left; */
 }
 
 .header a, .header a:visited {
@@ -37,7 +36,6 @@ body{
 
 .navbar {
     text-align: center;
-    /* float: right; */
 }
 
 .navbar ul, .navbar h1 {
@@ -56,41 +54,47 @@ body{
     color: white;
 }
 
-.product{
-    width:250px;
-    height:600px;
-    position:fixed left;
-    float:left;
-    background-color: #5383af;
-    margin: 0px 25px;
-    padding: 5px;
-    border: 1px solid black;
-    text-align: left;
-
-}
-.team{
-    width:250px;
-    height:600px;
-    position: fixed right;
-    float:right;
-    margin: 0px 25px;
-    border: 1px solid black;
-    background-color: #5383af;
-    text-align: left;
-
+.centered {
+    text-align: center;
 }
 
-.image{
+#feature-list {
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 70%;
+    height: 50%;
+    /* border: 1px solid red; */
+    display: flex;
+    
+}
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    width: 50%;
+#feature-list li {
+    font-size: 40px;
+    margin-bottom: 30px;
+    padding: 10px;
+    list-style: none;
+    border-radius: 20px;
+    background-color: #411261;
 }
-label, input {
-    display: block;
+
+.left-column {
+    float: left;
+    width: 40%;
+    height: 100%;
+    align-items:center;
 }
-span.helptext {
-    display: none;
+
+.right-column {
+    float: right;
+    width: 40%;
+    height: 100%;
+    align-items:center;
+}
+
+#homepage-content h1 {
+    font-size: 3em;
+}
+#homepage-content h2 {
+    font-size: 2em;
 }
