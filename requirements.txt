@@ -19,8 +19,8 @@ pycodestyle==2.8.0
 pyflakes==2.4.0
 pypiwin32==223
 python-decouple==3.6
-pyttsx3==2.90
-pywin32==303
+# pyttsx3==2.90
+# pywin32==303
 PyYAML==6.0
 requests==2.26.0
 six==1.16.0
