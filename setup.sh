@@ -11,11 +11,12 @@ function report_result() {
     fi
 }
 
+
 OS=$(uname -a | cut -c1-5)
 # venv
 ## create venv
 echo -e "\n*** Checking to see if virtual environment exists"
-if [[ -d "/venv" ]]; then
+if [[ ! -d "./venv" ]]; then
     echo -e "\n*** Creating new virtual environment using python-venv"
     if [[ $OS =~ "Linux" ]]; then
         echo "Making adjustments due to bad choice of operating system"
