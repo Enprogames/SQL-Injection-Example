@@ -3,14 +3,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Login</h2>
-<form method="post">
-    <fieldset>
-        <legend>Enter Login Info</legend>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Login">
-    </fieldset>
-</form>
-<a href="{% url 'register' %}">Register</a>
+<div class="centered">
+    <h2>Login</h2>
+    <div id="form-container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Login" class="button submit-button">
+        </form>
+        <a href="{% url 'register' %}" class="button">Don't have an account? Register</a>
+    </div>
+</div>
 {% endblock %}

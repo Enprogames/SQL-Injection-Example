@@ -31,11 +31,15 @@ body{
 .header a, .header a:visited {
     color: white;
     border-radius: 20px;
-    background-image: radial-gradient(circle, #C604D7 0%, #EB0293 100%)
+    /* background: radial-gradient(circle, #C604D7 0%, #EB0293 100%) */
+    background: linear-gradient(90deg, rgb(54, 0, 105) 20%, rgba(149,26,179,1) 80%);
 }
-.header a {
+
+a {
     color: white;
     text-decoration: none;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgb(54, 0, 105) 20%, rgba(149,26,179,1) 80%);
 }
 
 .header h1 {
@@ -83,7 +87,8 @@ body{
     padding: 10px;
     list-style: none;
     border-radius: 20px;
-    background-image: radial-gradient(circle, #021638 0%, #33224F 100%);
+    /* background-image: radial-gradient(circle, #021638 0%, #33224F 100%); */
+    background: linear-gradient(90deg, rgb(54, 0, 105) 20%, rgba(149,26,179,1) 80%);
 }
 
 .left-column {
@@ -121,4 +126,25 @@ body{
     border-radius: 20px;
 
     text-align: center;
+}
+
+/* Login and Register Form Styling */
+.form-container {
+    float: none;
+    display: flex;
+    flex-direction: column;
+}
+.button {
+    border-width: 0px;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgb(54, 0, 105) 20%, rgba(149,26,179,1) 80%);
+    cursor: pointer;
+    width: 20%;
+}
+
+.submit-button {
+    font-size: 20px;
 }
