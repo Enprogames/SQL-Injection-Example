@@ -12,14 +12,14 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
 
         parser.add_argument(
-            '--delete',
+            '--nodelete',
             action='store_true',
-            help='Delete previous database items before adding new ones from the csv files',
+            help="Don't delete previously created database items",
         )
 
     def handle(self, *args, **options):
 
-        if options['delete']:
+        if not options['nodelete']:
             # deleting all users should cause their data items to also be deleted
             User.objects.all().delete()
 
