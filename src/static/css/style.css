@@ -3,12 +3,13 @@ body{
     margin: 10px;
     height: 100%;
     color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .header {
     float: top;
     width:auto;
-    height:150px;
+    height:230px;
     padding: 0px;
     margin: 0px 25px;
     text-align: center;
@@ -34,13 +35,18 @@ body{
 }
 .header a {
     color: white;
+    text-decoration: none;
+}
+
+.header h1 {
+    font-size: 50px;
 }
 
 .navbar {
     text-align: center;
 }
 
-.navbar ul, .navbar h1 {
+.navbar ul {
     overflow: auto;
 }
 
@@ -78,7 +84,6 @@ body{
     list-style: none;
     border-radius: 20px;
     background-image: radial-gradient(circle, #021638 0%, #33224F 100%);
-    /* background-color: #411261; */
 }
 
 .left-column {
@@ -100,4 +105,20 @@ body{
 }
 #homepage-content h2 {
     font-size: 2em;
+}
+
+.document-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.document-item {
+    margin: 30px 20% 0px 20%;
+    padding: 5px 10px 5px 10px;
+    width: 20%;
+    border: 1px solid #C604D7;
+    border-radius: 20px;
+
+    text-align: center;
 }

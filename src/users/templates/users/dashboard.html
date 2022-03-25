@@ -4,10 +4,14 @@
 
 {% block content %}
 <p>Logged in as {{ user.username|default:'Guest' }}</p>
-<h1>Stored Documents</h1>
-{% for document in document_list %}
-    <div class="document-item" onclick="location.href='{% url 'detail' document.id %}';" style="cursor: pointer">
-        <h2>{{ document.title }}</h2>
+<div class="centered">
+    <h1>Stored Documents</h1>
+    <div class="document-list">
+    {% for document in document_list %}
+        <div class="document-item" onclick="location.href='{% url 'detail' document.id %}';" style="cursor: pointer">
+            <h2>{{ document.title }}</h2>
+        </div>
+    {% endfor %}
     </div>
-{% endfor %}
+</div>
 {% endblock %}
