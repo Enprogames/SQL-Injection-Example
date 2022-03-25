@@ -3,6 +3,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Login</h2>
-<p>Successfully logged in as {{ user.username|default:'Guest' }}</p>
+<p>Logged in as {{ user.username|default:'Guest' }}</p>
+<h1>Stored Documents</h1>
+{% for document in document_list %}
+    <div class="document-item" onclick="location.href='{% url 'detail' document.id %}';" style="cursor: pointer">
+        <h2>{{ document.title }}</h2>
+    </div>
+{% endfor %}
 {% endblock %}
