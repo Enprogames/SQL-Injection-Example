@@ -5,13 +5,15 @@
 {% block content %}
 <div class="centered">
     <h2>Login</h2>
-    <div id="form-container">
+    <div class="form-container">
         <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
+            <div class="login-container">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
             <input type="submit" value="Login" class="button submit-button">
         </form>
-        <a href="{% url 'register' %}" class="button">Don't have an account? Register</a>
+        <a href="{% url 'register' %}">Don't have an account? Register</a>
     </div>
 </div>
 {% endblock %}

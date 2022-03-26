@@ -7,11 +7,13 @@
     <h2>Register</h2>
     <div class="form-container">
         <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
+            <div class="register-container">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
             <input type="submit" value="Register" class="button submit-button">
         </form>
-        <a href="{% url 'login' %}" class="button">Already have an accont? Login</a>
+        <a href="{% url 'login' %}">Already have an accont? Login</a>
     </div>
 </div>
 {% endblock %}
