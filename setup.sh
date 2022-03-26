@@ -50,10 +50,10 @@ python -m pip install -r requirements.txt
 report_result
 
 # create .env file
-echo -e "\n*** Creating .env file"
-cat > .env << EOF
-SECRET_KEY = 'Enter django secret key here'
-EOF
-report_result
+# echo -e "\n*** Creating .env file"
+# cat > .env << EOF
+# SECRET_KEY = 'Enter django secret key here'
+# EOF
+# report_result
 
 echo -e "\nSetup Completed Successfully."
