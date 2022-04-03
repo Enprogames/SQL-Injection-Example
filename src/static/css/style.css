@@ -124,10 +124,8 @@ a {
 .document-item {
     margin: 30px 20% 0px 20%;
     padding: 5px 10px 5px 10px;
-    width: 40%;
     border: 1px solid #C604D7;
     border-radius: 20px;
-
     text-align: center;
 }
 
