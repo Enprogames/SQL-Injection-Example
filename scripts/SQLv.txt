@@ -1,0 +1,12 @@
+'Nick; DROP TABLE emp_master'
+Nick' OR 1='1
+'Nick'
+"Nick"
+'DROP TABLE';"Nick"'
+GET_TABLE
+POST_TABLE
+"1=1":TABLE_GET'
+"1==1: Nick"
+
+
+
