@@ -27,7 +27,7 @@ SECRET_KEY = "jtnjddl12jl*7b&3_j#-^4@a_zn0n^(yg(n*)9f^hn8clk9^fb"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # use my own terrible authentication method as defined in bad_authentication.py
 AUTHENTICATION_BACKENDS = ['sql_injection.bad_authentication.SettingsBackend']
