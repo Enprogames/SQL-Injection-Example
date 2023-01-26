@@ -3,7 +3,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>Logged in as {{ user.username|default:'Guest' }}</p>
+<h1>Logged in as {{ user.username|default:'Guest' }}</h1>
 <div class="centered">
     <h1>Stored Documents</h1>
     <div class="document-list">
